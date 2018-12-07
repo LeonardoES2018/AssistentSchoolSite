@@ -1,0 +1,17 @@
+.bg-dark {
+    background-color: #007bff!important;
+}
+
+
+.btn-primary{
+color: white !important;
+border-color: #ffffff !important;
+}
+
+.modal-header{
+    background: #1E90FF;
+}
+
+.sidebar{
+    background-color: #000000 !important;
+}
