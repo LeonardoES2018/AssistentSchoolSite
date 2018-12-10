@@ -13,7 +13,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/entrar', 'HomeController@perfil');
+Route::get('/entrar', 'HomeController@perfil')->name('home.perfil');
 
 Route::get('/professor', 'AlunoController@TelaPrefossor')->name('aluno.TelaPrefossor');
 

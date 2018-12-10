@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Professor;
 use App\User;
 
 class ProfessorController extends Controller
@@ -15,11 +14,9 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        $professor = Professor::all();
+        $professor = User::all();
         return response()->json(['data'=>$professor, 'status'=>true]);
     }
-
-    
 
     /**
      * Show the form for creating a new resource.
@@ -84,14 +81,14 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->all();
+        /*$dados = $request->all();
         $professor = Professor::create($dados);
 
         if($professor){
             return response()->json(['data'=>$professor, 'status'=>true]);
         } else {
             return response()->json(['data'=>'Erro ao cadastrar Professor', 'satus'=>false]);
-        }
+        }*/
     }
 
     /**

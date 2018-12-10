@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('professor', 'ProfessorController');
-Route::resource('disciplina', 'DisciplinaController');
-Route::resource('aluno', 'AlunoController');
-Route::resource('sala', 'SalaController');
+Route::resource('professors', 'ProfessorController');
+Route::resource('disciplinas', 'DisciplinaController');
+Route::resource('alunos', 'AlunoController');
+Route::resource('salas', 'SalaController');

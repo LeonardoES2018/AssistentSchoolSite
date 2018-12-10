@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Aluno;
 use App\User;
 
 class AlunoController extends Controller
@@ -15,7 +14,6 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        $aluno = Aluno::all();
         return view('Aluno.Aluno_Inicial');
     }
 
@@ -71,14 +69,14 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->all();
+        /* $dados = $request->all();
         $aluno = Aluno::create($dados);
 
         if($aluno){
             return response()->json(['data'=>$aluno, 'status'=>true]);
         } else {
             return response()->json(['data'=>'Erro ao cadastrar Aluno', 'satus'=>false]);
-        }
+        }*/
     }
 
     /**

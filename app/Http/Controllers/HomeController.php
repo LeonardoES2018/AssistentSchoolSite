@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Entrar;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -29,12 +31,20 @@ class HomeController extends Controller
 
     public function Perfil()
     {
+       // $users = DB::select('select name from user where name = ?', name , ['nome' => $users]);
+
         return view('Entrar.Modal_Perfil');
     }
 
     public function login()
     {
         return view('Auth.login');
+    }
+
+    public function autenticacao()
+    {
+        $p = User::all();
+        return View::make('Entrar.Modal_Perfil', ['type' => $p]);
     }
     
 }

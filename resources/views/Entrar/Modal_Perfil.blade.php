@@ -31,18 +31,16 @@
         <form>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputName" class="form-control" placeholder="Email address" required="required"
-                autofocus="autofocus">
-              <label for="inputEmail">Nome</label>
+              <input type="text" id="nome" class="form-control" required="required" autofocus="autofocus" value="{{ Auth::user()->name }}" readonly>
+              <label for="nome">Usuário</label>
             </div>
           </div>
           <div class="form-group">
-            <div class="form-group">
-              <select class="form-control" id="cx1">
-                <option value="professor">Professor</option>
-                <option value="aluno">Aluno</option>
-              </select>
-            </div>
+          @if (Auth::user()->type == 'p')
+          {!!  Form::select('type', ['p' => 'Professor' ], 'p', ['class' => 'form-control' ]) !!}
+          @else
+          {!!  Form::select('type', ['a' => 'Aluno' ], 'p', ['class' => 'form-control' ]) !!}
+          @endif
           </div>
 
           <div class="form-group">
@@ -55,11 +53,14 @@
             </div>
           </div><br>
 
+          @if (Auth::user()->type == 'p')
+          <a class="btn btn-primary btn-block" href="{{ route('professor.inicialProfessor') }}">Entrar</a>
+          @else          
           <a class="btn btn-primary btn-block" href="{{ route('aluno.index') }}">Entrar</a>
-          
+          @endif
         </form>
         <div class="text-center">
-            <a class="d-block small" href="{{ route('aluno.index') }}">Voltar</a>
+            <a class="d-block small" href="{{ route('login') }}">Voltar</a>
           </div>
       </div>
     </div>
