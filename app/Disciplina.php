@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Disciplina extends Model
 {
-    protected $fillable = ['descricao', 'dataInicio', 'dataFim', 'conteudo', 'idProfessor'];
+    protected $fillable = ['descricao', 'dataInicio', 'dataFim'];
 }

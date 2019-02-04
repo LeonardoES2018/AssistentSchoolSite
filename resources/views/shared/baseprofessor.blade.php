@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-  <a class="navbar-brand mr-1" href="{{ route('professor.inicialProfessor') }}">Menu</a>
+  <a class="navbar-brand mr-1" href="{{ url('/professor/inicial') }}">Menu</a>
 
   <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
     <i class="fas fa-bars"></i>
@@ -70,18 +70,18 @@
         </a>
     </li>
   <li class="nav-item active">
-    <a class="nav-link" href="{{ route('professor.inicialProfessor') }}">
+    <a class="nav-link" href="{{ url('/professor/inicial') }}">
       <i class="fas fa-fw fa-home"></i>
       <span>Inicio</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('professor.telaTurmas') }}">
+    <a class="nav-link" href="{{ url('/professor/turma') }}">
       <i class="fas fa-chalkboard-teacher"></i>
       <span>Turmas</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('professor.telaConteudo') }}">
+    <a class="nav-link" href="{{ url('/professor/conteudo') }}">
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Conteudos</span></a>
   </li>

@@ -18,9 +18,6 @@ class CreateDisciplinasTable extends Migration
             $table->string('descricao');
             $table->string('dataInicio');
             $table->string('dataFim');
-            $table->longtext('conteudo');
-            $table->unsignedInteger('idUsuario');
-            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

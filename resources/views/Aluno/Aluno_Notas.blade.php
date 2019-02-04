@@ -5,7 +5,7 @@
 
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{ route('aluno.TelaNotas') }}">Notas</a>
+            <a href="{{ url('/aluno/notas') }}">Notas</a>
           </li>
           <li class="breadcrumb-item active">Aluno</li>
         </ol>

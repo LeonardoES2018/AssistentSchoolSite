@@ -5,7 +5,7 @@
 
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{ route('aluno.index') }}">Área do aluno</a>
+            <a href="{{ url('/aluno/inicial') }}">Área do aluno</a>
           </li>
           <li class="breadcrumb-item active">Inicial</li>
         </ol>

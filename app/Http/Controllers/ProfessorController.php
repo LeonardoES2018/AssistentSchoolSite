@@ -28,50 +28,6 @@ class ProfessorController extends Controller
         
     }
 
-    
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function inicialProfessor()
-    {
-        return view('Professor.Professor_Inicial');
-    }
-
-  
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function telaTurmas()
-    {
-        return view('Professor.Professor_TurmaGeral');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function telaConteudo()
-    {
-        return view('Professor.Professor_Conteudo');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function telaTurma1()
-    {
-        return view('Professor.Professor_Turma1');
-    }
-
-    
 
     /**
      * Store a newly created resource in storage.

@@ -5,7 +5,7 @@
 
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{ route('aluno.TelaPrefossor') }}">Turmas</a>
+            <a href="{{ url('/aluno/professor') }}">Turmas</a>
           </li>
           <li class="breadcrumb-item active">Gustavo Ramos Siqueira</li>
         </ol>

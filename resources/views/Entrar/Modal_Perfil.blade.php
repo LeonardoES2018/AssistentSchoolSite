@@ -54,9 +54,9 @@
           </div><br>
 
           @if (Auth::user()->type == 'p')
-          <a class="btn btn-primary btn-block" href="{{ route('professor.inicialProfessor') }}">Entrar</a>
+          <a class="btn btn-primary btn-block" href="{{ url('/professor/inicial') }}">Entrar</a>
           @else          
-          <a class="btn btn-primary btn-block" href="{{ route('aluno.index') }}">Entrar</a>
+          <a class="btn btn-primary btn-block" href="{{ url('/aluno/inicial') }}">Entrar</a>
           @endif
         </form>
         <div class="text-center">

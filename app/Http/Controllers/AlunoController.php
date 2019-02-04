@@ -14,7 +14,7 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        return view('Aluno.Aluno_Inicial');
+
     }
 
     /**
@@ -28,38 +28,6 @@ class AlunoController extends Controller
             'idUsuario' => $data['idUsuario'],
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function TelaPrefossor()
-    {
-        return view('Aluno.Aluno_Professor');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function TelaNotas()
-    {
-        return view('Aluno.Aluno_Notas');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function TelaSituacao()
-    {
-        return view('Aluno.Aluno_Situacao');
-    }
-
-    
 
     /**
      * Store a newly created resource in storage.

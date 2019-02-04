@@ -33,7 +33,7 @@
   <!-- Opções da barra direita -->
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="{{ route('aluno.index') }}">Menu</a>
+    <a class="navbar-brand mr-1" href="{{ url('/aluno/inicial') }}">Menu</a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
     </button>
@@ -76,17 +76,17 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('aluno.index') }}">
+        <a class="nav-link" href="{{ url('/aluno/inicial') }}">
           <i class="fas fa-home"></i>
           <span>Inicio</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('aluno.TelaPrefossor') }}">
+        <a class="nav-link" href="{{ url('/aluno/professor') }}">
           <i class="fas fa-chalkboard-teacher"></i>
           <span>Professores</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('aluno.TelaNotas') }}">
+        <a class="nav-link" href="{{ url('/aluno/notas') }}">
           <i class="fas fa-chart-line"></i>
           <span>Notas</span></a>
       </li>
