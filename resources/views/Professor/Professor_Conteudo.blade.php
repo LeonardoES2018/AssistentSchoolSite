@@ -1,7 +1,7 @@
 @extends ('shared.baseprofessor')
 
 @section('content3')
-      <div class="container-fluid">
+    <div class="container-fluid">
 
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -43,6 +43,5 @@
         </div>
       </div>
     </div>
-  </div>
 
   @endsection

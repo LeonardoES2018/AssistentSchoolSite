@@ -86,11 +86,56 @@
             <td>{{$disciplina->dataInicio}}</td>
             <td>{{$disciplina->dataFim}}</td>
             <td>
-              <a type="btn btn-primary" href="{{ route('disciplina.update', $disciplina->id) }}" data-toggle="modal" data-target="#DisciplinaEditarModal"><i class="fas fa-pencil-alt"></i></a>
+              <a type="btn btn-primary" data-toggle="modal" href="#" data-target="#DisciplinaEditarModal{{$disciplina->id}}"><i class="fas fa-pencil-alt"></i></a>
               <a href="{{ route('disciplina.destroy', $disciplina->id)}}"><i class="fas fa-trash"></i></a>
-              <a><i class="fas fa-table"></i></a>
+              <a href="#"><i class="fas fa-table"></i></a>
             </td>
           </tr>
+
+              <!-- Modal Editar Disciplina -->
+              <div class="modal fade" id="DisciplinaEditarModal{{$disciplina->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Editar Disciplina</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+
+                  <div class="modal-body">
+                    
+                  <form method="POST" action="{{ route('disciplina.update', $disciplina->id) }}">
+                  {{ csrf_field() }} 
+                    <div class="form-group col-md-12">
+
+                      <div class="col-md-12">
+                        <label for="id">ID</label>
+                        <input name="id" type="text" class="form-control" required="required" value="{{ $disciplina->id }}" autofocus="autofocus" style="width: 50px;" readonly>
+                      </div>
+
+                      <div class="col-md-12">
+                        <label for="descricao">Nome da disciplina</label>
+                        <input name="descricao" type="text" class="form-control" placeholder="Digite o nome da sua disciplina" required="required" value="{{ $disciplina->descricao }}" autofocus="autofocus" >
+                      </div>
+                      
+                        <div class="col-md-6">
+                          <label for="dtInicio">Data início</label>
+                          <input name="dataInicio" type="date" class="form-control" required="required" value="{{ $disciplina->dataInicio }}" autofocus="autofocus">
+                        </div>
+
+                        <div class="col-md-6">
+                        <label for="dtFim">Data fim</label>
+                        <input name="dataFim" type="date" class="form-control" placeholder="Digite a data de termino da disciplina" required="required" value="{{ $disciplina->dataFim }}" autofocus="autofocus" >
+                        </div>
+                    </div>
+                      <button type="submit" class="btn btn-primary">Alterar</button>
+                      <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+                  </form>
+                  </div>
+                  </div>
+                </div>
+              </div>
           @endforeach
         </tbody>
       </table>
@@ -101,7 +146,7 @@
 <!-- FIM CARD -->
 </div>
 
-<!-- Modal Cadastrar Disciplina 
+<!-- Modal Cadastrar Disciplina -->
   <div class="modal fade" id="DisciplinaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -147,59 +192,8 @@
         </div>
       </div>
     </div>
-  </div>-->
-
-  <!-- Modal Editar Disciplina -->
-  <div class="modal fade" id="DisciplinaEditarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cadastrar Disciplina</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-
-      <div class="modal-body">
         
-      <form method="PUT" action="{{ route('disciplina.edit') }}">
-      @csrf
-        <div class="form-group col-md-12">
+  </div> 
 
-@foreach($disciplina as $disciplinas)
-          <div class="col-md-12">
-            <label for="id">ID</label>
-            <input name="id" type="text" id="id" class="form-control" required="required" autofocus="autofocus" value="{{$disciplinas->id}}" readonly>
-          </div>
-
-          <div class="col-md-12">
-            <label for="descricao2">Nome da disciplina</label>
-            <input name="descricao" type="text" id="descricao2" class="form-control" placeholder="Digite o nome da sua disciplina" required="required" autofocus="autofocus" >
-          </div>
-          
-            <div class="col-md-6">
-              <label for="dtInicio2">Data início</label>
-              <input name="dataInicio" type="date" id="dtInicio2" class="form-control" required="required" autofocus="autofocus">
-            </div>
-
-            <div class="col-md-6">
-            <label for="dtFim">Data fim</label>
-            <input name="dataFim" type="date" id="dtFim2" class="form-control" placeholder="Digite a data de termino da disciplina" required="required" autofocus="autofocus" >
-            </div>
-@endforeach
-        </div>
-        <div>
-          <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <div>
-      </form>
-         
-      </div>
-
-        <div class="modal-footer">
-          
-        </div>
-      </div>
-    </div>
-  </div>
+  
 @endsection
