@@ -16,10 +16,8 @@ class CreateInstituicaosTable extends Migration
         Schema::create('instituicaos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomeInstituicao');
-            $table->unsignedInteger('idDisciplina');
-            $table->foreign('idDisciplina')->references('id')->on('disciplinas')->onDelete('cascade');
-            $table->unsignedInteger('idSala');
-            $table->foreign('idSala')->references('id')->on('salas')->onDelete('cascade');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

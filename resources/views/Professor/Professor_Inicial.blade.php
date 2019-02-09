@@ -8,12 +8,15 @@
     <a href="{{ url('/professor/inicial') }}">Inicio</a>
   </li>
   <a li class="breadcrumb-item active" href="{{ url('/professor/turmas') }}">Turmas</li>
-
 </ol>
+
 <a class="btn btn-primary" data-toggle="modal" data-target="#DisciplinaModal">Cadastrar Disciplina</a><br><br>
+<a class="btn btn-primary" data-toggle="modal" data-target="#IntituicaoModal">Cadastrar Instituição</a><br><br>
 
 <!-- Area Chart Example-->
 <div class="row">
+
+
 
   <div class="col-xl-3 col-sm-6 mb-3">
     <i class="fas fa-chart-area"></i>
@@ -146,6 +149,48 @@
 <!-- FIM CARD -->
 </div>
 
+<!-- Modal Cadastrar Intituicao -->
+<div class="modal fade" id="IntituicaoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cadastrar Disciplina</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+      <div class="modal-body">
+        
+      <form method="POST" action="{{ route('instituicao.create') }}">
+      @csrf
+        <div class="form-group col-md-12">
+
+          <div class="col-md-12">
+            <label for="nomeInstituicao">Nome da Intituição</label>
+          <input name="nomeInstituicao" type="text" id="nomeInstituicao" class="form-control" placeholder="Digite o nome da instituição" required="required" autofocus="autofocus" >
+          </div>
+
+          <input name="idUsuario" type="hidden" id="idUsuario" class="form-control" required="required" autofocus="autofocus" value="{{ Auth::user()->id }}" readonly>
+
+        </div>
+
+        <div>
+          <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <div>
+      </form>
+         
+      </div>
+
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+    </div>
+        
+  </div>
+
 <!-- Modal Cadastrar Disciplina -->
   <div class="modal fade" id="DisciplinaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -194,6 +239,8 @@
     </div>
         
   </div> 
+
+  
 
   
 @endsection

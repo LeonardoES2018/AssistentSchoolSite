@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Instituicao;
+use App\User;
+
 
 class InstituicaoController extends Controller
 {
@@ -13,7 +17,23 @@ class InstituicaoController extends Controller
      */
     public function index()
     {
-        //
+        //$users = DB::table('instituicaos')->select('nomeInstituicao')->where('id', '=', Auth()->user->id);
+        $instituicoes = Instituicao::where('idUsuario', User::id())->get();
+        return view('home.perfil', compact('instituicoes'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list(Request $request)
+    {
+        //$users = DB::table('instituicaos')->select('nomeInstituicao')->where('id', '=', Auth()->user->id);
+        //$instituicoes = DB::table('instituicaos')->select('nomeInstituicao')->where('idUsuario = ?', [1])->get();
+        $instituicoes = Instituicao::select('nomeInstituicao')->where('user_id = ?', [1])->get();
+        //$instituicoes = Instituicao::where('idUsuario', Auth::id())->get();
+        return view('Entrar.Modal_Perfil', compact('instituicoes'));
     }
 
     /**
@@ -21,9 +41,12 @@ class InstituicaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $dados = $request->all();
+        $instituicao = Instituicao::create($dados);
+
+        return redirect()->route('disciplina.List');
     }
 
     /**

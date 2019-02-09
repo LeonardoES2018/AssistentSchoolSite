@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Disciplina;
+use App\Auth;
 //use App\Professor;
 
 class DisciplinaController extends Controller
@@ -52,6 +53,7 @@ class DisciplinaController extends Controller
     public function store(Request $request)
     {
         $dados = $request->all();
+        $dados = Auth::user()->id;
         $disciplina = Disciplina::create($dados);
 
         if($disciplina){

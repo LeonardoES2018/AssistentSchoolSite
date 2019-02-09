@@ -33,7 +33,7 @@
         <form>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="nome" class="form-control" required="required" autofocus="autofocus" value="{{ Auth::user()->name }}" readonly>
+              <input type="text" name="nome" id="nome" class="form-control" required="required" autofocus="autofocus" value="{{ Auth::user()->name }}" readonly>
               <label for="nome">Usuário</label>
             </div>
           </div>
@@ -45,15 +45,15 @@
           @endif
           </div>
 
+          @foreach($instituicoes as $instituicao)
           <div class="form-group">
             <div class="form-label-group">
               <select class="form-control">
-                <option value="ceet">CEET Vasco Coutinho</option>
-                <option value="sen">Senac</option>
-                <option value="ses">Sesi</option>
+                <option value="{{$instituicao->nomeInstituicao}}">{{$instituicao->nomeInstituicao}}</option>
               </select>
             </div>
           </div><br>
+          @endforeach
 
           @if (Auth::user()->type == 'p')
           <a class="btn btn-primary btn-block" href="{{ url('/professor/inicial') }}">Entrar</a>

@@ -23,7 +23,14 @@ Route::view('/aluno/professor', 'Aluno.Aluno_Professor');
 Route::view('/aluno/notas', 'Aluno.Aluno_Notas');
 Route::view('/aluno/situacao', 'Aluno.Aluno_Situacao');
 
-Route::get('/entrar', 'HomeController@perfil')->name('home.perfil');
+
+// CRUD Instituiçao
+Route::post('/instituicaoCadastrar', 'InstituicaoController@create')->name('instituicao.create');
+
+Route::view('/entrar', 'Entrar.Modal_Perfil');
+//Route::get('/entrar', 'HomeController@perfil')->name('home.perfil');
+//Route::get('/entrar', 'HomeController@list')->name('home.list');
+Route::get('/entrar', 'InstituicaoController@list')->name('instituicao.list');
 
 Auth::routes();
 

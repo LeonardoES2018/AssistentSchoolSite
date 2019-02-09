@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Entrar;
 use App\User;
+use App\Instituicao;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
 
     public function Perfil()
     {
