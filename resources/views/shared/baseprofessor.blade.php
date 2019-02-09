@@ -5,6 +5,8 @@
 
 <title>Professor</title>
 
+<link rel="icon" type="imagem/png" href="{{ asset('img/logo.png') }}"/>
+
 <!-- Bootstrap core CSS-->
 <link href="{{ asset ('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 

@@ -5,11 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Acessar conta') }}</div>
+                <div class="card-header">{{ __('Acesse sua conta') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+
+                        <div align="center">
+                            <img src="img/logo.png" alt="some text">
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-mail') }}</label>

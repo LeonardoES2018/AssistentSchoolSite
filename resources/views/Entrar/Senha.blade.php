@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" type="imagem/png" href="{{ asset('img/logo.png') }}"/>
+
     <title>SB Admin - Forgot Password</title>
 
     <!-- Bootstrap core CSS-->

@@ -9,7 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>Acesse a sua conta</title>
+
+    <link rel="icon" type="imagem/png" href="{{ asset('img/logo.png') }}"/>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
