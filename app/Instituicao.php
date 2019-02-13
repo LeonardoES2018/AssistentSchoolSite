@@ -9,8 +9,8 @@ class Instituicao extends Model
 {
     protected $fillable = ['nomeInstituicao', 'user_id'];
 
-    public function usuario(){
+    /*public function usuario(){
         return $this->hasOne(User::class);
-    }
+    }*/
 
 }
